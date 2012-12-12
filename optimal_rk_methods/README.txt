@@ -7,8 +7,9 @@ MATLAB code for generating optimal method:
 
     p = 2;
     s = 5;
-    (load polynomial coefficients from file)
-    rk = rk_opt(s,p,'erk','acc','poly_coeff_ind',???,'poly_coeff_val',???)
+    (load polynomial coefficients from file and store them in poly_coeff)
+    ind = p+1:s;
+    rk = rk_opt(s,p,'erk','acc','poly_coeff_ind',ind,'poly_coeff_val',poly_coeff(ind))
 
 
 Each subdirectory erk-xN/ contain the coefficients of the optimal methods

@@ -8,10 +8,10 @@ MATLAB:
     p = 2;
     s = 5;
     sd.order = p;
-    sd.upwindPar = 
-    sd.Kstep = 
-    sd.thetaStep = 
-    sd.psiStep = 
+    sd.upwindPar = 1;
+    sd.Kstep = 0.15;
+    sd.thetaStep = 0.15;
+    sd.psiStep = 0.15;
     lamda = semispectrum_2DSD_GenPatt(
     [h, polycoeff] = opt_poly_bisect(lamda,s,p,'monomial','tol_bisect',1.e-7)
 
@@ -25,7 +25,7 @@ six columns of the file contain, in order:
  - The order to which it approximates the exponential
  - The number of free coefficients in the optimization problem
  - The maximum stable step size
- - The maximum stable step size divided by the degree of the polynomial
+ - The maximum stable step size divided by the number of stages
  - The number of bisection iterations used to compute the polynomial
  
 The remaining columns (from the seventh to the last) contain the polynomial
