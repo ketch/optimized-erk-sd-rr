@@ -3,7 +3,7 @@ found in the paper.  However, the algorithm depends on a random number
 generator (used to generate random start points for local optimization
 searches), so your results will not match those in the paper exactly.
 
-MATLAB:
+MATLAB code for generating an optimal stability function:
 
     p = 2;
     s = 5;

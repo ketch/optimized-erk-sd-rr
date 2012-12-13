@@ -336,7 +336,7 @@ def get_coeffs(order,stages) :
     this_dir=os.path.dirname(__file__)
     if (this_dir == ""):
         this_dir = "."
-    rk = parse(this_dir+'/erk-x'+str(order)+'/3sstar/ERK-'+str(order)+'-'+str(stages)+'.txt')
+    rk = parse(this_dir+'/erk-x-'+str(order)+'/3sstar/ERK-'+str(order)+'-'+str(stages)+'.txt')
     return rk
 
 ##########################################################################
