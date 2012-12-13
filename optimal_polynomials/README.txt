@@ -12,12 +12,17 @@ MATLAB:
     sd.Kstep = 0.15;
     sd.thetaStep = 0.15;
     sd.psiStep = 0.15;
-    lamda = semispectrum_2DSD_GenPatt(
-    [h, polycoeff] = opt_poly_bisect(lamda,s,p,'monomial','tol_bisect',1.e-7)
+    doplot = 1;
+    lamda = semispectrum_2DSD_GenPatt(sd,doplot)
+    x = real(lambda);
+    y = imag(lambda);
+    k = convhull(x,y);
+    lam = complex(x(k),y(k));
+    [h, polycoeff] = opt_poly_bisect(lam,s,p,'monomial','tol_bisect',1.e-7)
 
 
 The subdirectory rk-stab-coeffs/ contains the coefficients of the optimal polynomials
-used in the paper.  For instance, the file rk-stab-coeffs/SD-2.txt contains
+used in the paper.  For instance, the file rk-stab-coeffs/sd-2.txt contains
 the coefficients of all the optimal 2nd-order accurate polynomials.  The first
 six columns of the file contain, in order:
 
