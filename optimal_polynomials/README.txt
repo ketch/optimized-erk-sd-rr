@@ -9,13 +9,13 @@ MATLAB code for generating an optimal stability function:
     s = 5;
     sd.order = p;
     sd.upwindPar = 1;
-    sd.Kstep = 0.15;
+    sd.KStep = 0.15;
     sd.thetaStep = 0.15;
     sd.psiStep = 0.15;
     doplot = 1;
-    lamda = semispectrum_2DSD_GenPatt(sd,doplot)
-    x = real(lambda);
-    y = imag(lambda);
+    lam = semispectrum_2DSD_GenPatt(sd,doplot)
+    x = real(lam);
+    y = imag(lam);
     k = convhull(x,y);
     lam = complex(x(k),y(k));
     [h, polycoeff] = opt_poly_bisect(lam,s,p,'monomial','tol_bisect',1.e-7)
