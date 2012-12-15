@@ -13,7 +13,7 @@ MATLAB code for generating an optimal stability function:
     sd.thetaStep = 0.15;
     sd.psiStep = 0.15;
     doplot = 1;
-    lam = semispectrum_2DSD_GenPatt(sd,doplot)
+    lam = semispectrum_2DSD_GenPatt(sd,doplot);
     x = real(lam);
     y = imag(lam);
     k = convhull(x,y);

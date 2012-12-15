@@ -86,7 +86,6 @@ for iFlux = 1:nbrFluxPoints1D
     end
 end
 
-extrSolToFlux1D;
 
 
 % Matrix for the calculation of the flux to the solution points
@@ -102,7 +101,6 @@ for iSol = 1:nbrSolPoints1D
     end
 end
 
-extrFluxToSol1D;
 
 
 % Matrix for the calculation of the flux derivative at the solution points
@@ -123,8 +121,6 @@ for iFlux = 1:nbrFluxPoints1D
         end
     end
 end
-
-derivFluxInSolPoints1D;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,9 +160,6 @@ genPatFaceNormals(1,1) = +(genPatNodes(4, 2) - genPatNodes(1, 2))/faceSize;
 genPatFaceNormals(1,2) = -(genPatNodes(4, 1) - genPatNodes(1, 1))/faceSize;
 genPatFaceNormals(2,1) = -(genPatNodes(2, 2) - genPatNodes(1, 2))/faceSize;
 genPatFaceNormals(2,2) = +(genPatNodes(2, 1) - genPatNodes(1, 1))/faceSize;
-
-genPatFaceNormals;
-
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -225,8 +218,6 @@ for iPsi = 1:nbrPsi
         end
     end
     
-    M0;
-    
     
     % Riemann flux for the vertical faces
     rSolvFactor = invT(1, 1)*cPsi*genPatFaceNormals(1, 1) + invT(1, 2)*sPsi*genPatFaceNormals(1, 2);
@@ -248,11 +239,8 @@ for iPsi = 1:nbrPsi
         end
     end
     
-    M0;
-    MM1;
     
-    
-    % MP1 and M0 matrices (right face fkux points)
+    % MP1 and M0 matrices (right face flux points)
     MP1 = zeros(nbrFluxPoints1D*nbrFluxPoints1D,nbrSolPoints2D);
     for iYFlux = 1:nbrFluxPoints1D
         for iYSol = 1:nbrSolPoints1D
@@ -265,10 +253,6 @@ for iPsi = 1:nbrPsi
             end
         end
     end
-    
-    M0;
-    MM1;
-    MP1; 
     
                     
     % Derivation matrix for the csi-fluxes
@@ -284,8 +268,6 @@ for iPsi = 1:nbrPsi
             end
         end
     end
-    
-    DCsi;
     
    
     % Matricies for calculation of the solution in the flux points in the
@@ -304,8 +286,6 @@ for iPsi = 1:nbrPsi
             end
         end
     end
-    
-    N0;
     
     
     % Riemann flux for the horizontal faces
@@ -327,10 +307,7 @@ for iPsi = 1:nbrPsi
             end
         end
     end
-    
-    N0;
-    NM1;
-    
+
     
     % NP1 and N0 matrices (upper face flux points)
     NP1 = zeros(nbrFluxPoints1D*nbrFluxPoints1D,nbrSolPoints2D);
@@ -346,10 +323,6 @@ for iPsi = 1:nbrPsi
         end
     end
     
-    N0;
-    NM1;
-    NP1;
-    
     
     % Derivation matrix for the eta-fluxes
     DEta = zeros(nbrSolPoints2D,nbrFluxPoints1D*nbrFluxPoints1D);
@@ -364,8 +337,6 @@ for iPsi = 1:nbrPsi
             end
         end
     end
-    
-    DEta;
     
         
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
