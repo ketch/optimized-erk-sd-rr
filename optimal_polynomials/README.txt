@@ -23,7 +23,7 @@ MATLAB code for generating an optimal stability function:
 
 The subdirectory rk-stab-coeffs/ contains the coefficients of the optimal polynomials
 used in the paper.  For instance, the file rk-stab-coeffs/sd-2.txt contains
-the coefficients of all the optimal 2nd-order accurate polynomials.  The first
+the coefficients of all the optimal 2nd-order accurate polynomials. The first
 six columns of the file contain, in order:
 
  - The degree of the polynomial

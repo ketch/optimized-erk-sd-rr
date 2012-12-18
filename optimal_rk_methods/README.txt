@@ -7,14 +7,16 @@ MATLAB code for generating an optimal method:
 
     p = 2;
     s = 5;
-    (load polynomial coefficients from file and store them in poly_coeff)
+    % The following array contains the optimal stability polynomial stored in
+    % optimal_polynomials/polynomial-coefficients/sd-2.txt
+    poly_coeff = [1.0000000000000000E+00,	1.0000000000000000E+00,	5.0000000000000000E-01,	1.3876772158093043E-01,	2.1520726214707169E-02,	1.4956929981860788E-03];
     ind = p+1:s;
     rk = rk_opt(s,p,'erk','acc','poly_coeff_ind',ind,'poly_coeff_val',poly_coeff(ind))
 
 
 Each subdirectory erk-x-N/ contain the coefficients of the optimal methods
-of order N used in the paper.  For instance, the file erk-x-2/3sstar/ERK-3-2.txt contains
-the coefficients of the optimal 3-stage, 2nd-order method.
+of order N used in the paper.  For instance, the file erk-x-2/3sstar/ERK-5-2.txt contains
+the coefficients of the optimal 5-stage, 2nd-order method.
 
 The file erk.py is a convenient script for extracting the method
 coefficients for manipulation in Python.
