@@ -32,9 +32,6 @@ for i_stab_poly = 1:number_stab_poly
 
     % Polynomial coefficients values
     poly_coeff = d(7+p+1:length(d));
-    
-    s
-    p
 
     if s==stages
         return
