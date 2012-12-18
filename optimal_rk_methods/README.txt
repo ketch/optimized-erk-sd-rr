@@ -14,6 +14,15 @@ MATLAB code for generating an optimal method:
     rk = rk_opt(s,p,'erk','acc','poly_coeff_ind',ind,'poly_coeff_val',poly_coeff(ind))
 
 
+Alternatively:
+
+    p = 2;
+    s = 5;
+    % Load the stability polynomial coefficients 
+    poly_coeff = load_poly('../optimal_polynomials/polynomial-coefficients/sd-2.txt',5)
+    rk = rk_opt(s,p,'erk','acc','poly_coeff_ind',p+1:s,'poly_coeff_val',poly_coeff)
+
+
 Each subdirectory erk-x-N/ contain the coefficients of the optimal methods
 of order N used in the paper.  For instance, the file erk-x-2/3sstar/ERK-5-2.txt contains
 the coefficients of the optimal 5-stage, 2nd-order method.
