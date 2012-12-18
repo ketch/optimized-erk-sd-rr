@@ -61,7 +61,7 @@ end
 % =========================================================================
 
 function [read_fid,number_stab_poly]= read_header(input_file_name)
-%function [read_fid,number_stab_poly]= read_data(input_file_name)
+function [read_fid,number_stab_poly]= read_data(input_file_name)
 %
 % Read name of the variables saved in the file
 
